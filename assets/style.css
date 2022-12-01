@@ -1,0 +1,46 @@
+body{  
+    margin: 0;
+    padding: 0;  
+}
+
+body > *{
+    flex: 1;
+}
+.header {
+   background-color: lightblue;
+   padding: 5px;
+   display: flex;  
+   justify-content: center;
+   height: 8vh;
+}
+
+.top-words-wrapper {
+background-image: url(./moby.jpg);
+background-size: 100% ;
+background-repeat: no-repeat;
+object-fit: contain;
+display: flex;
+flex-direction: column;
+height: 100vh;
+align-items: center;
+}
+
+.little-words{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 30px;
+}
+
+#find-out{
+   width: 100px;
+   height: 30px;
+   background-color: burlywood;
+   border-radius: 5px;   
+}
+
+#find-out:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: antiquewhite;
+}
