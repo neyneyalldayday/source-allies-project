@@ -1,0 +1,23 @@
+{
+  "name": "source-allies-project",
+  "version": "1.0.0",
+  "description": "a little project sent over to be by source allies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neyneyalldayday/source-allies-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neyneyalldayday/source-allies-project/issues"
+  },
+  "homepage": "https://github.com/neyneyalldayday/source-allies-project#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
