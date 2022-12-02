@@ -21,8 +21,9 @@ background-repeat: no-repeat;
 object-fit: contain;
 display: flex;
 flex-direction: column;
-height: 100vh;
+height: 40vh;
 align-items: center;
+margin: 0;
 }
 
 .little-words{
@@ -43,4 +44,27 @@ align-items: center;
     cursor: pointer;
     text-decoration: underline;
     background-color: antiquewhite;
+}
+
+
+#one-hundred-words{
+    display: flex;
+    background-color: aquamarine;
+    height: 40vh;
+    margin: 0;
+}
+
+.footer{
+    display: flex;
+    height: 10vh;
+    position: relative;
+    bottom: 0;
+    background-color: black;
+    color: floralwhite;
+    margin:0;
+    padding: 1rem;
+}
+
+.footer > * {
+    flex: 1;
 }
