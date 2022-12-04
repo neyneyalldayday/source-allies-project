@@ -14,27 +14,31 @@ function filterStopwords() {
     topOneHundred()
 }
 
-function topOneHundred() { 
-    
-  let mobyMap = {}
-  
+function topOneHundred() {
+  let mobyMap = new Map();
+
   filteredWords[0].forEach((word) => {
-        mobyMap[word] = (mobyMap[word] || 0) + 1;          
-    })
-       
-    
-   for (key in mobyMap){
+    mobyMap.get(word)
+      ? mobyMap.set(word, mobyMap.get(word) + 1)
+      : mobyMap.set(word, 1);
+  });
 
-    let billPaxton = [key, mobyMap[key]]    
-    
-    let topEl = document.createElement("li")
-    topEl.textContent = billPaxton
-    topEl.className += "top-el-list"
-    wordList.appendChild(topEl)
-    buttonEl.classList.add("hide")    
+  const sortedMap = new Map([...mobyMap].sort((a, b) => b[1] - a[1]));
 
-   }
+  let i = 1;
+
+  for (let [key, val] of sortedMap) {
+    if (i > 100) return;
+
+    let topEl = document.createElement("li");
+    topEl.textContent = `${key} - ${val}`;
+    topEl.className += "top-el-list";
+    wordList.appendChild(topEl);
+    buttonEl.classList.add("hide");
+    i++;
+  }
 }
+
 
 function handleClick(e) { 
     if (!e.target.matches('#find-out')) {
