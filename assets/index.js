@@ -4,8 +4,6 @@ const wordList = document.querySelector('#list')
 const wordsWrapper = document.querySelector('.top-words-wrapper')
 
 let filteredWords = []
-console.log(filteredWords)
-
 
 let mobyArray = mobyDick.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").split(' ')
 let stopWordsArray = stopWords.toLowerCase().split(' ')
@@ -15,7 +13,6 @@ function filterStopwords() {
     filteredWords.push(newMoby);
     topOneHundred()
 }
-
 
 function topOneHundred() { 
     
