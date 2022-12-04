@@ -2,6 +2,7 @@ const clickContainer = document.querySelector(".top-words-wrapper")
 const buttonEl = document.querySelector('#find-out')
 const wordList = document.querySelector('#list')
 const wordsWrapper = document.querySelector('.top-words-wrapper')
+const arrows = document.querySelector('#more-arrows')
 
 let filteredWords = []
 
@@ -31,13 +32,28 @@ function topOneHundred() {
     if (i > 100) return;
 
     let topEl = document.createElement("li");
-    topEl.textContent = `${key} - ${val}`;
+    topEl.textContent = ` ${key} `;
     topEl.className += "top-el-list";
     wordList.appendChild(topEl);
+
+    topEl.addEventListener("mouseover", function() {     
+        topEl.textContent = `${key} - appears ${val} times`     
+    })
+    topEl.addEventListener("mouseout", function() {     
+        topEl.textContent = `${key}`     
+    })
+    topEl.addEventListener("touchstart", function() {     
+      topEl.textContent = `${key} - appears ${val} times`     
+  })
+    topEl.addEventListener("touchend", function() {     
+      topEl.textContent = `${key}`     
+  })
     buttonEl.classList.add("hide");
+    arrows.classList.remove("hide");
     i++;
   }
 }
+
 
 
 function handleClick(e) { 
