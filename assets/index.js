@@ -3,6 +3,11 @@ const buttonEl = document.querySelector('#find-out')
 const wordList = document.querySelector('#list')
 const wordsWrapper = document.querySelector('.top-words-wrapper')
 const arrows = document.querySelector('#more-arrows')
+const helpMessage = document.querySelector('#help')
+const today = document.querySelector('#today')
+const date = document.createElement('h3')
+date.textContent = moment().format(`dddd, MMMM Do`)
+today.appendChild(date)
 
 let filteredWords = []
 
@@ -49,7 +54,8 @@ function topOneHundred() {
       topEl.textContent = `${key}`     
   })
     buttonEl.classList.add("hide");
-    arrows.classList.remove("hide");
+    arrows.classList.remove("hide"); 
+    helpMessage.classList.remove("hide")  
     i++;
   }
 }
